@@ -1,0 +1,73 @@
+﻿.AuthorizationBox {
+    width: 300px;
+    height: auto;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 15px;
+    border: 2px solid #0085FF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.AuthorizationTitle {
+    color: #0085FF;
+    font-size: 30px; 
+    text-align: center;
+}
+
+
+.InputContainer {
+    margin-bottom: 15px;
+}
+
+    .InputContainer input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+.LoginButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.RegistrationPrompt {
+    margin-top: 15px;
+    text-align: center;
+}
+
+    .RegistrationPrompt a {
+        color: #0085FF;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+
+.AuthorizationButton {
+    padding: 10px 20px;
+    margin: 0;
+    border: 2px solid #0085FF;
+    background-color: #FFFFFF;
+    color: #0085FF; /* Синий текст */
+    text-align: center;
+    font-size: 16px; /* Размер текста, можно настроить по желанию */
+    font-weight: bold;
+    border-radius: 20px; /* Закругление углов */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Плавная анимация */
+}
+
+    .AuthorizationButton:hover {
+        background-color: #0085FF;
+        color: #FFFFFF;
+        transform: scale(1.1);
+    }
+
+
+

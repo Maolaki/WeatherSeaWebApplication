@@ -1,0 +1,44 @@
+﻿.MainPage {
+    background: linear-gradient(to bottom, #c3e1fc, #FFFFFF);
+}
+
+.WeatherSeaContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    height: 80vh;
+}
+
+.WeatherSeaContent {
+    max-width: 50%;
+}
+
+.WeatherSeaTitle {
+    color: #0085FF;
+    font-size: 48px;
+    margin-bottom: 10px;
+    top: 100px;
+}
+
+.WeatherSeaDescription {
+    color: #0085FF;
+    font-size: 24px;
+    margin-bottom: 10px;
+    top: 100px;
+}
+
+.WeatherSeaSlogan {
+    color: #0085FF;
+    font-size: 24px;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+
+.WeatherSeaImage {
+    max-width: 300px;
+    max-height: 300px;
+    position: absolute;
+    top: 200px;
+    right: 100px;
+}

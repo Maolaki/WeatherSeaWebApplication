@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "FieldList";
+}
+
+@section Links {
+    <link rel="stylesheet" href="~/css/fieldTable.css" asp-append-version="true" />
+}
+
+@section Navigation {
+    <div class="NavigationContainer">
+        <a class="NavigationButton" asp-controller="Home" asp-action="Index">Выйти</a>
+        <a class="NavigationButton" asp-controller="Modules" asp-action="FieldList">Отчёты</a>
+        <a class="NavigationButton" asp-controller="Modules" asp-action="FieldList">Анализ</a>
+        <a class="NavigationButton" asp-controller="Modules" asp-action="FieldList">Поля</a>
+        <a class="NavigationButton" asp-controller="Modules" asp-action="FieldList">Доступ</a>
+        <a class="NavigationButton" asp-controller="Images" asp-action="ImageAction">
+            <img src="/icons/moon.png" alt="Картинка" class="button-image">
+        </a>
+    </div>
+}
+
+@section Body {
+    <div class="title">Список полей</div>
+    <div class="table-container">
+        <table>
+            <tr>
+                <td class="field">
+                    <a asp-controller="Modules" asp-action="FieldInfo"></a>
+                    <img src="/icons/happyCloud.png" class="main-image" alt="Основное изображение">
+                    <div class="field-name">Кукуруза</div>
+                    <div class="temperature">23 °С</div>
+                    <div class="air-info">
+                        <img src="/icons/arrow-right.png" class="small-image" alt="Маленькое изображение">
+                        <div class="air-speed">1.3 м/сек</div>
+                    </div>
+                </td>
+                <td class="field">
+                    <a asp-controller="YourController" asp-action="YourAction"></a>
+                    <img src="/icons/bigCloud.png" class="main-image" alt="Основное изображение">
+                    <div class="field-name">Пшеница</div>
+                    <div class="temperature">21 °С</div>
+                    <div class="air-info">
+                        <img src="/icons/arrow-right.png" class="small-image" alt="Маленькое изображение">
+                        <div class="air-speed">4.8 м/сек</div>
+                    </div>
+                </td>
+                <td class="field">
+                    <a asp-controller="YourController" asp-action="YourAction"></a>
+                    <img src="/icons/rain.png" class="main-image" alt="Основное изображение">
+                    <div class="field-name">Зерно</div>
+                    <div class="temperature">20 °С</div>
+                    <div class="air-info">
+                        <img src="/icons/arrow-right.png" class="small-image" alt="Маленькое изображение">
+                        <div class="air-speed">2.2 м/сек</div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="field">
+                    <a asp-controller="YourController" asp-action="YourAction"></a>
+                    <img src="/icons/moon.png" class="main-image" alt="Основное изображение">
+                    <div class="field-name">Картошка</div>
+                    <div class="temperature">28 °С</div>
+                    <div class="air-info">
+                        <img src="/icons/arrow-right.png" class="small-image" alt="Маленькое изображение">
+                        <div class="air-speed">1.7 м/сек</div>
+                    </div>
+                </td>
+                </td>
+                <td class="field">
+                    <a asp-controller="YourController" asp-action="YourAction"></a>
+                    <img src="/icons/sun.png" class="main-image" alt="Основное изображение">
+                    <div class="field-name">Яблоки</div>
+                    <div class="temperature">31 °С</div>
+                    <div class="air-info">
+                        <img src="/icons/arrow-right.png" class="small-image" alt="Маленькое изображение">
+                        <div class="air-speed">3.3 м/сек</div>
+                    </div>
+                </td>
+                <td class="field">
+                    <a asp-controller="YourController" asp-action="YourAction"></a>
+                    <img src="/icons/happyCloud.png" class="main-image" alt="Основное изображение">
+                    <div class="field-name">Морковь</div>
+                    <div class="temperature">22 °С</div>
+                    <div class="air-info">
+                        <img src="/icons/arrow-right.png" class="small-image" alt="Маленькое изображение">
+                        <div class="air-speed">5.2 м/сек</div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="field">
+                    <a asp-controller="YourController" asp-action="YourAction"></a>
+                    <img src="/icons/sun.png" class="main-image" alt="Основное изображение">
+                    <div class="field-name">Арбузы</div>
+                    <div class="temperature">32 °С</div>
+                    <div class="air-info">
+                        <img src="/icons/arrow-right.png" class="small-image" alt="Маленькое изображение">
+                        <div class="air-speed">0.2 м/сек</div>
+                    </div>
+                </td>
+                <td class="addField">
+                    <a asp-controller="YourController" asp-action="AddFieldAction"><img src="/icons/add-button.png" alt="Описание"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+
+

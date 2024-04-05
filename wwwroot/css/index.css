@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'Exo2';
+    src: url('/fonts/Exo2-SemiBold.woff2');
+}
+
+@media (max-width: 800px) {
+    .MainNavigation {
+        min-width: 800px; /* ”станавливает минимальную ширину контента */
+    }
+    .MainPage {
+        min-width: 800px; /* ”станавливает минимальную ширину контента */
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    font-family: 'Exo2', sans-serif;
+}
+
+.MainNavigation {
+    height: 4.5vw;
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 25px;
+    background: rgba(0, 133, 255, 1);
+    border-bottom: 1px solid #F3F3F3;
+    position: fixed;
+    z-index: 1000;
+}
+
+.MainPage {
+    padding-top: 70px;
+    min-width: 100vh;
+    min-height: calc(100vh - 70px);
+    position: relative;
+    background: #F3F3F3;
+    overflow-x: auto;
+}
+
+.NavigationContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.NavigationButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 4px 8px;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: 3px solid #F3F3F3;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    color: white;
+    font-size: 28px;
+    font-family: 'Exo2', sans-serif;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+}
+
+    .NavigationButton:hover {
+        background-color: #F3F3F3;
+        transform: scale(1.05);
+        color: #0085FF; 
+    }
+
+    .NavigationButton img.button-image {
+        padding: 6px 6px;
+        width: 2vw;
+        height: 2vw;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+    }
+
+.Image {
+    width: 512px;
+    height: 512px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Mainpagetext {
+    position: absolute;
+    color: black;
+    font-size: 48px;
+    font-family: 'Exo2', sans-serif;
+    font-weight: 700;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+}

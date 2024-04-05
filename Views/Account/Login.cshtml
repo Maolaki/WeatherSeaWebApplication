@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+@section Links {
+    <link rel="stylesheet" href="~/css/authorization.css" asp-append-version="true" />
+}
+
+@section Navigation {
+    <a class="NavigationButton" asp-controller="Home" asp-action="Index">
+        Меню
+    </a>
+}
+
+@section Body {
+    <div class="AuthorizationBox">
+        <h2 class="AuthorizationTitle">Авторизация</h2>
+        <form asp-controller="Account" asp-action="Login" method="post">
+            <div class="InputContainer">
+                <label for="login">Логин:</label>
+                <input type="text" id="login" placeholder="Логин" name="login" required>
+            </div>
+            <div class="InputContainer">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" placeholder="Пароль" name="password" required>
+            </div>
+            <div class="LoginButtonContainer">
+                <button type="submit" class="AuthorizationButton">Войти</button>
+            </div>
+            <div class="RegistrationPrompt">
+                Нету аккаунта? <a asp-controller="Modules" asp-action="FieldInfo">Регистрация</a>
+            </div>
+        </form>
+    </div>
+}
+
+

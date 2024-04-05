@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "HomePage";
+}
+
+@section Links {
+    <link rel="stylesheet" href="~/css/mainPage.css" asp-append-version="true" />
+}
+
+@section Navigation {
+    <a class="NavigationButton" asp-controller="Account" asp-action="Register">
+        Регистрация
+    </a>
+    <a class="NavigationButton" asp-controller="Account" asp-action="Login">
+        Авторизация
+    </a>
+}
+
+@section Body {
+    <div class="WeatherSeaContainer">
+        <div class="WeatherSeaContent">
+            <h1 class="WeatherSeaTitle">WeatherSea</h1>
+            <p class="WeatherSeaDescription">Точный прогноз погоды для моряков и любителей морских путешествий.</p>
+            <p class="WeatherSeaDescription">Узнайте погоду в открытом море и будьте готовы к новым приключениям.</p>
+            <div class="WeatherSeaSlogan">Ваш надежный компас в мире погоды!</div>
+        </div>
+        <img class="WeatherSeaImage" src="/icons/happyCloud.png" alt="WeatherSea Icon" />
+    </div>
+}
+

@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherSea</title>
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+    @RenderSection("Links", required: false)
+</head>
+<body>
+    <div class="MainNavigation">
+        @RenderSection("Navigation")
+    </div>
+    <div class="MainPage">
+        @RenderSection("Body")
+    </div>
+</body>
+</html>
