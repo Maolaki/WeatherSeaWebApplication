@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "PricesInfo";
+}
+
+@section Links {
+    <link rel="stylesheet" href="~/css/pricesInfo.css" asp-append-version="true" />
+}
+
+@section Navigation {
+    <a class="header-logo" asp-controller="Home" asp-action="Index">WeatherSea</a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Home" asp-action="PricesInfo">
+            Цены
+        </a>
+        <a class="header-button" asp-controller="Account" asp-action="Register">
+            Регистрация
+        </a>
+        <a class="header-button" asp-controller="Account" asp-action="Login">
+            Авторизация
+        </a>
+    </div>
+}
+
+@section Body {
+    <div class="table-container">
+        <table>
+            <tr>
+                <td class="table-cell">
+                    <div class="role">Стандарт</div>
+                    <div class="functionality">
+                        - Просмотр погоды
+                        </div>
+                    <div class="price">Бесплатно</div>
+                </td>
+                <td class="table-cell">
+                    <div class="role">Премиум</div>
+                    <div class="functionality">
+                        - Просмотр погоды
+                        - Анализ участков
+                    </div>
+                    <div class="price">10 BYN</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+

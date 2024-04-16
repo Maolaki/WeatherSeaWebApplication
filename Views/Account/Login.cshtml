@@ -7,9 +7,11 @@
 }
 
 @section Navigation {
-    <a class="NavigationButton" asp-controller="Home" asp-action="Index">
-        Меню
-    </a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Home" asp-action="Index">
+            Главная страница
+        </a>
+    </div>
 }
 
 @section Body {
@@ -28,7 +30,7 @@
                 <button type="submit" class="AuthorizationButton">Войти</button>
             </div>
             <div class="RegistrationPrompt">
-                Нету аккаунта? <a asp-controller="Modules" asp-action="FieldInfo">Регистрация</a>
+                Нету аккаунта? <a asp-controller="Modules" asp-action="FieldList">Регистрация</a>
             </div>
         </form>
     </div>

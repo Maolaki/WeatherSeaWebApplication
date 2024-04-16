@@ -1,0 +1,55 @@
+﻿.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 2vh; 
+    margin: 0 auto;
+}
+
+.table-cell {
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    border: 1vh solid #0085FF; 
+    border-radius: 25px; 
+    width: 24vh; 
+    height: 65vh; 
+    background: #ffffff; 
+    padding: 2vh;
+}
+
+    .table-cell .role {
+        text-align: center;
+        position: absolute;
+        top: 5%;
+        font-size: 2.5vh;
+        width: calc(100% - 4vh);
+        color: black;
+    }
+
+    .table-cell .functionality {
+        text-align: justify;
+        position: absolute;
+        top: calc(10% + 2.5vh);
+        font-size: 2.5vh;
+        width: calc(100% - 4vh);
+        color: black;
+    }
+
+    .table-cell .price {
+        text-align: center;
+        position: absolute;
+        bottom: 5%;
+        font-size: 2.5vh;
+        width: calc(100% - 4vh);
+        color: black;
+    }
+
+.table-cell:hover {
+    background-color: #e6f2ff;
+}

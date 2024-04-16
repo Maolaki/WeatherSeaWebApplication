@@ -7,12 +7,18 @@
 }
 
 @section Navigation {
-    <a class="NavigationButton" asp-controller="Account" asp-action="Register">
-        Регистрация
-    </a>
-    <a class="NavigationButton" asp-controller="Account" asp-action="Login">
-        Авторизация
-    </a>
+    <a class="header-logo">WeatherSea</a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Home" asp-action="PricesInfo">
+            Цены
+        </a>
+        <a class="header-button" asp-controller="Account" asp-action="Register">
+            Регистрация
+        </a>
+        <a class="header-button" asp-controller="Account" asp-action="Login">
+            Авторизация
+        </a>
+    </div>
 }
 
 @section Body {

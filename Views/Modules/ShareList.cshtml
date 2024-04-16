@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Profile";
+}
+
+@section Links {
+    <link rel="stylesheet" href="~/css/shareList.css" asp-append-version="true" />
+}
+
+@section Navigation {
+    <a class="header-logo" asp-controller="Home" asp-action="Index">WeatherSea</a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Modules" asp-action="FieldList">
+            Отчёты
+        </a>
+        <a class="header-button" asp-controller="Modules" asp-action="FieldList">
+            Анализ
+        </a>
+        <a class="header-button" asp-controller="Modules" asp-action="FieldList">
+            Поля
+        </a>
+        <a class="header-button" asp-controller="Modules" asp-action="ShareList">
+            Доступ
+        </a>
+    </div>
+    <a class="header-button-image" asp-controller="Modules" asp-action="Profile">
+        <img src="/icons/moon.png" alt="Картинка" class="button-image">
+    </a>
+}
+
+@section Body {
+    <div class="title">Режим доступа</div>
+    <div class="table-container">
+        <table>
+            <tr>
+                <td class="field">
+                    <a asp-controller="YourController" asp-action="YourAction"></a>
+                    <span class="field-name">Картофан</span>
+                    <span class="field-mode">public</span>
+                    <span class="image-button">
+                        <img src="/icons/bin.png" alt="Изображение" class="image-button" onclick="event.stopPropagation();">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="add-field">
+                    <a asp-controller="YourController" asp-action="YourAction"></a>
+                    <img src="/icons/add-button.png" alt="Центральное изображение">
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+
+
+

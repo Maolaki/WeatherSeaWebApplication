@@ -7,9 +7,11 @@
 }
 
 @section Navigation {
-    <a class="NavigationButton" asp-controller="Home" asp-action="Index">
-        Меню
-    </a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Home" asp-action="Index">
+            Главная страница
+        </a>
+    </div>
 }
 
 @section Body {
@@ -25,10 +27,10 @@
                 <input type="password" id="password" placeholder="Пароль" name="password" required>
             </div>
             <div class="LoginButtonContainer">
-                <button type="submit" class="AuthorizationButton">Войти</button>
+                <button type="submit" class="AuthorizationButton">Зарегистрироваться</button>
             </div>
             <div class="RegistrationPrompt">
-                Есть аккаунт? <a asp-controller="Modules" asp-action="FieldInfo">Авторизация</a>
+                Есть аккаунт? <a asp-controller="Modules" asp-action="FieldList">Авторизация</a>
             </div>
         </form>
     </div>

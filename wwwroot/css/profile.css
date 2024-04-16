@@ -1,0 +1,65 @@
+﻿.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh; /* Высота всего экрана */
+    margin: 0;
+    padding: 0;
+}
+
+.avatar-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar-image {
+    padding: 6px;
+    border: 5px solid #0085FF;
+    border-radius: 35px;
+    width: calc(30vw * 2 / 10); /* Размер аватарки */
+    height: calc(30vw * 2 / 10);
+    margin-right: 20px;
+}
+
+.user-info {
+    text-align: left;
+}
+
+.username {
+    font-size: calc(30vw * 2 / 25);
+    font-weight: bold;
+    color: #0085FF;
+}
+
+.status {
+    font-size: calc(30vw * 2 / 40);
+    color: grey;
+}
+
+.buttons-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-button {
+    margin: 10px 0;
+    background: #ffffff;
+    border: 5px solid #0085FF;
+    padding: 0.5rem;
+    text-align: center;
+    width: 100%;
+    height: calc(30vw * 2 / 10);
+    border-radius: 15px;
+    font-size: calc(30vw * 2 / 25);
+    color: #0085FF;
+    text-decoration: none;
+}
+
+    .profile-button:hover {
+        transform: scale(1.05);
+    }

@@ -10,5 +10,10 @@ namespace WeatherSeaWebApplication.Controllers
         {
             return View();
         }
+
+        public IActionResult PricesInfo()
+        {
+            return View();
+        }
     }
 }
