@@ -2,64 +2,72 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh; /* Высота всего экрана */
-    margin: 0;
-    padding: 0;
+    margin-top: 20vh;
 }
 
 .avatar-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
 }
 
 .avatar-image {
-    padding: 6px;
-    border: 5px solid #0085FF;
-    border-radius: 35px;
-    width: calc(30vw * 2 / 10); /* Размер аватарки */
-    height: calc(30vw * 2 / 10);
-    margin-right: 20px;
+    width: 150px; /* Размер аватара */
+    height: 150px; /* Размер аватара */
+    border: 5px solid #0085FF; /* Синяя граница */
+    border-radius: 20%; /* Круглая рамка */
+    object-fit: cover; /* Сохранение пропорций изображения */
 }
 
 .user-info {
-    text-align: left;
+    margin-top: 10px;
 }
 
-.username {
-    font-size: calc(30vw * 2 / 25);
+.info-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px; /* Отступ между строками */
+}
+
+.info-label {
+    font-size: 18px; /* Размер шрифта */
     font-weight: bold;
-    color: #0085FF;
+    color: #333; /* Цвет текста */
+    margin-right: 10px; /* Отступ справа от метки */
 }
 
-.status {
-    font-size: calc(30vw * 2 / 40);
-    color: grey;
+.username, .email, .status {
+    font-size: 18px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
 }
 
 .buttons-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 10px; /* Отступ между кнопками */
+    width: 100%; /* Ширина секции кнопок */
+    max-width: 300px; /* Максимальная ширина кнопок */
+    margin-top: 20px; /* Отступ сверху */
 }
 
 .profile-button {
-    margin: 10px 0;
-    background: #ffffff;
-    border: 5px solid #0085FF;
-    padding: 0.5rem;
-    text-align: center;
-    width: 100%;
-    height: calc(30vw * 2 / 10);
-    border-radius: 15px;
-    font-size: calc(30vw * 2 / 25);
-    color: #0085FF;
-    text-decoration: none;
+    font-size: 18px; /* Размер шрифта */
+    color: #0085FF; /* Цвет текста */
+    border: 2px solid #0085FF; /* Синяя граница */
+    background-color: transparent; /* Прозрачный фон */
+    padding: 10px 20px; /* Внутренние отступы */
+    cursor: pointer; /* Курсор указателя */
+    transition: background-color 0.3s, color 0.3s; /* Анимация при наведении */
+    border-radius: 5px; /* Закругленные углы */
+    text-align: center; /* Выравнивание текста по центру */
+    width: 100%; /* Ширина кнопки */
+    max-width: 300px; /* Максимальная ширина кнопки */
 }
 
     .profile-button:hover {
-        transform: scale(1.05);
+        background-color: #0085FF; /* Синий фон при наведении */
+        color: #fff; /* Белый текст при наведении */
     }

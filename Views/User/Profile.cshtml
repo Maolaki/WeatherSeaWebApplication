@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "UserProfile";
+}
+
+@model List<EntityModel>
+
+@section Links {
+    <link rel="stylesheet" href="~/css/profile.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/modals.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/js/modals.js"></script>
+    <script src="~/js/profile.js"></script>
+}
+
+@section Navigation {
+    <a class="header-logo" asp-controller="Home" asp-action="Index">WeatherSea</a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Report" asp-action="ReportList">
+            Отчёты
+        </a>
+        <a class="header-button" asp-controller="Entity" asp-action="EntityList">
+            Сущности
+        </a>
+        <a class="header-button" asp-controller="Field" asp-action="FieldList">
+            Поля
+        </a>
+        <a class="header-button" asp-controller="Access" asp-action="AccessList">
+            Доступы
+        </a>
+    </div>
+    <a class="header-button-image" asp-controller="User" asp-action="Profile">
+        <img src="/icons/moon.png" alt="Картинка" class="button-image">
+    </a>
+}
+
+@section Body {
+    <div class="profile-container">
+        <div class="avatar-section">
+            <img src="/icons/moon.png" alt="Аватар" class="avatar-image">
+            <div class="user-info">
+                <div class="info-row">
+                    <span class="info-label">Имя пользователя:</span>
+                    <div class="username"></div>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Email:</span>
+                    <div class="email"></div>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Статус:</span>
+                    <div class="status"></div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons-section">
+            <button class="profile-button" id="1">Изменить имя</button>
+            <button class="profile-button" id="2">Изменить пароль</button>
+            <button class="profile-button" id="3">Изменить почту</button>
+            <button class="profile-button" id="4">Купить 5 дней Premium</button>
+        </div>
+    </div>
+}
+
+
+@section Modals {
+    <!-- Модальное окно для изменения профиля -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-backdrop">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="profileModalLabel"></h5>
+                    </div>
+
+                    <div class="modal-body">
+                        <p id="modalBodyText1"></p>
+                        <input type="text" class="form-control" id="inputField" maxlength="16" minlength="3">
+                        <p id="modalBodyText2"></p>
+                        <input type="password" class="form-control" id="confirmPassword" maxlength="30" minlength="8">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="saveButton">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

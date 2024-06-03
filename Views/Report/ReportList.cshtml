@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "EntityList";
+}
+
+@model List<EntityModel>
+
+@section Links {
+    <link rel="stylesheet" href="~/css/reportList.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/modals.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/js/modals.js"></script>
+    <script src="~/js/reportList.js"></script>
+}
+
+@section Navigation {
+    <a class="header-logo" asp-controller="Home" asp-action="Index">WeatherSea</a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Report" asp-action="ReportList">
+            Отчёты
+        </a>
+        <a class="header-button" asp-controller="Entity" asp-action="EntityList">
+            Сущности
+        </a>
+        <a class="header-button" asp-controller="Field" asp-action="FieldList">
+            Поля
+        </a>
+        <a class="header-button" asp-controller="Access" asp-action="AccessList">
+            Доступы
+        </a>
+    </div>
+    <a class="header-button-image" asp-controller="User" asp-action="Profile">
+        <img src="/icons/moon.png" alt="Картинка" class="button-image">
+    </a>
+}
+
+@section Body {
+    <div class="title">Отчеты</div>
+    <div class="search-sort-filter-container">
+        <input type="text" id="search-input" placeholder="Поиск...">
+        <button id="sort-button">Сортировка</button>
+        <button id="filter-standart-button">Фильтр: Стандартные</button>
+        <button id="filter-plants-button">Фильтр: Растения</button>
+        <button id="filter-animals-button">Фильтр: Животные</button>
+        <button id="filter-combined-button">Фильтр: Комбинированные</button>
+    </div>
+    <div class="table-container" id="Table">
+        <table>
+        </table>
+    </div>
+}
+
+@section Modals {
+    <!-- Модальное окно для добавления отчета -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="addReportModalLabel" aria-hidden="true">
+        <div class="modal-backdrop">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Добавить Отчет</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="reportForm">
+                            <div class="form-group">
+                                <label for="Name">Название отчета:</label>
+                                <input type="text" class="form-control" id="Name" name="Name" placeholder="Название" required maxlength="16" minlength="3">
+                            </div>
+                            <div class="form-group">
+                                <label for="Type">Тип отчета:</label>
+                                <select class="form-control" id="Type" name="Type" required>
+                                    <option value="Basic">Без подробностей</option>
+                                    <option value="Plant">Только растение</option>
+                                    <option value="Animal">Только животное</option>
+                                    <option value="Combined">Комбинированный</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="fieldSelect">
+                                <label for="Field">Поле:</label>
+                                <select class="form-control" id="Field" name="Field" required>
+                                    <!-- Здесь будут опции для животных -->
+                                </select>
+                            </div>
+                            <!-- Комбобокс для выбора растения -->
+                            <div class="form-group" id="plantSelect" style="display: none;">
+                                <label for="Plant">Растение:</label>
+                                <select class="form-control" id="Plant" name="Plant" required>
+                                    <!-- Здесь будут опции для растений -->
+                                </select>
+                            </div>
+                            <!-- Комбобокс для выбора животного -->
+                            <div class="form-group" id="animalSelect" style="display: none;">
+                                <label for="Animal">Животное:</label>
+                                <select class="form-control" id="Animal" name="Animal" required>
+                                    <!-- Здесь будут опции для животных -->
+                                </select>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Добавить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

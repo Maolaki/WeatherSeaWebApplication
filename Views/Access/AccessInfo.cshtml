@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "AccessInfo";
+}
+
+@model List<AccessModel>
+
+@section Links {
+    <link rel="stylesheet" href="~/css/accessInfo.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/modals.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/js/modals.js"></script>
+    <script src="~/js/accessInfo.js"></script>
+}
+
+@section Navigation {
+    <a class="header-logo" asp-controller="Home" asp-action="Index">WeatherSea</a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Report" asp-action="ReportList">
+            Отчёты
+        </a>
+        <a class="header-button" asp-controller="Entity" asp-action="EntityList">
+            Сущности
+        </a>
+        <a class="header-button" asp-controller="Field" asp-action="FieldList">
+            Поля
+        </a>
+        <a class="header-button" asp-controller="Access" asp-action="AccessList">
+            Доступы
+        </a>
+    </div>
+    <a class="header-button-image" asp-controller="User" asp-action="Profile">
+        <img src="/icons/moon.png" alt="Картинка" class="button-image">
+    </a>
+}
+
+@section Body {
+    <div class="title">Доступы</div>
+    <div class="table-container">
+        <table>
+            <!-- Будет заполнено JavaScript -->
+        </table>
+    </div>
+}
+
+@section Modals {
+    <!-- Модальное окно для добавления сущности -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="addAccessModalLabel" aria-hidden="true">
+        <div class="modal-backdrop">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h class="modal-title">Добавить Доступ</h>
+                    </div>
+                    <div class="modal-body">
+
+                        <form>
+                            <div class="form-group">
+                                <label for="UserLogin">Логин пользователя:</label>
+                                <input type="text" class="form-control" id="UserLogin" name="UserLogin" placeholder="Логин" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="Type">Тип доступа:</label>
+                                <select class="form-control" id="Type" name="Type" required>
+                                    <option value="0">Просмотр</option>
+                                    <option value="1">Редактирование</option>
+                                </select>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Добавить</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

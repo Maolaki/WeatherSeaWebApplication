@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "EntityList";
+}
+
+@model List<EntityModel>
+
+@section Links {
+    <link rel="stylesheet" href="~/css/accessList.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/modals.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/js/accessList.js"></script>
+}
+
+@section Navigation {
+    <a class="header-logo" asp-controller="Home" asp-action="Index">WeatherSea</a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Report" asp-action="ReportList">
+            Отчёты
+        </a>
+        <a class="header-button" asp-controller="Entity" asp-action="EntityList">
+            Сущности
+        </a>
+        <a class="header-button" asp-controller="Field" asp-action="FieldList">
+            Поля
+        </a>
+        <a class="header-button" asp-controller="Access" asp-action="AccessList">
+            Доступы
+        </a>
+    </div>
+    <a class="header-button-image" asp-controller="User" asp-action="Profile">
+        <img src="/icons/moon.png" alt="Картинка" class="button-image">
+    </a>
+}
+
+@section Body {
+    <div class="title">Доступы</div>
+    <div class="table-container">
+        <table>
+            <!-- Будет заполнено JavaScript -->
+        </table>
+    </div>
+}

@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+@section Links {
+    <link rel="stylesheet" href="~/css/identification.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/js/authorization.js" asp-append-version="true"></script>
+}
+
+@section Navigation {
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Home" asp-action="Index">
+            Главная страница
+        </a>
+    </div>
+}
+
+@section Body {
+    <div class="IdentificationBox">
+        <h2 class="IdentificationTitle">Авторизация</h2>
+        <form asp-controller="Identification" asp-action="Authorization" method="post">
+            <div class="InputContainer">
+                <label for="login">Логин:</label>
+                <input type="text" id="login" placeholder="Логин" name="login" required autocomplete="login" maxlength="16" minlength="4">
+            </div>
+            <div class="InputContainer">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" placeholder="Пароль" name="password" required autocomplete="password" maxlength="30" minlength="8">
+            </div>
+            <div class="IdentificationButtonContainer">
+                <button type="submit" id="authorizationButton" class="IdentificationButton">Войти</button>
+            </div>
+            <div class="IdentificationPrompt">
+                Нету аккаунта? <a asp-controller="Identification" asp-action="Registration">Регистрация</a>
+            </div>
+        </form>
+    </div>
+}
+

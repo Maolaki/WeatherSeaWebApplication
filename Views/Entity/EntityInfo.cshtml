@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "EntityInfo";
+}
+
+@model List<EntityModel>
+
+@section Links {
+    <link rel="stylesheet" href="~/css/entityInfo.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/modals.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/js/modals.js"></script>
+    <script src="~/js/entityInfo.js"></script>
+}
+
+@section Navigation {
+    <a class="header-logo" asp-controller="Home" asp-action="Index">WeatherSea</a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Report" asp-action="ReportList">
+            Отчёты
+        </a>
+        <a class="header-button" asp-controller="Entity" asp-action="EntityList">
+            Сущности
+        </a>
+        <a class="header-button" asp-controller="Field" asp-action="FieldList">
+            Поля
+        </a>
+        <a class="header-button" asp-controller="Access" asp-action="AccessList">
+            Доступы
+        </a>
+    </div>
+    <a class="header-button-image" asp-controller="User" asp-action="Profile">
+        <img src="/icons/moon.png" alt="Картинка" class="button-image">
+    </a>
+}
+
+@section Body {
+    <div class="title">Описание сущности</div>
+
+    <div class="table-container">
+        <form id="entity-form">
+            <div class="form-group">
+                <label for="Name">Название сущности:</label>
+                <input type="text" class="form-control" id="Name" name="Name" readonly maxlength="16" minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="Type">Тип сущности:</label>
+                <select class="form-control" id="Type" name="Class" disabled>
+                    <option value="0">Растение</option>
+                    <option value="1">Животное</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Description">Описание:</label>
+                <textarea class="form-control" id="Description" name="Description" rows="3" readonly></textarea>
+            </div>
+            <div class="form-group">
+                <label for="RecommendedTemperature">Рекомендуемая температура:</label>
+                <input type="number" class="form-control" id="RecommendedTemperature" name="RecommendedTemperature" readonly min="-60" max="60">
+            </div>
+            <div class="form-group">
+                <label for="RecommendedWindSpeed">Рекомендуемая скорость ветра:</label>
+                <input type="number" class="form-control" id="RecommendedWindSpeed" name="RecommendedWindSpeed" step="0.1" readonly min="-60" max="60">
+            </div>
+            <div class="form-group">
+                <label for="RecommendedHumidity">Рекомендуемая влажность:</label>
+                <input type="number" class="form-control" id="RecommendedHumidity" name="RecommendedHumidity" step="0.1" readonly min="-60" max="60">
+            </div>
+            <div class="text-center">
+                <button type="button" id="delete-button" class="field-button-delete">Удалить</button>
+                <button type="button" id="edit-button" class="field-button-edit">Редактировать</button>
+                <button type="button" id="save-button" class="field-button-update" style="display: none;">Сохранить изменения</button>
+            </div>
+        </form>
+    </div>
+}

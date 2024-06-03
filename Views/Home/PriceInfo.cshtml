@@ -9,13 +9,10 @@
 @section Navigation {
     <a class="header-logo" asp-controller="Home" asp-action="Index">WeatherSea</a>
     <div class="header-buttons">
-        <a class="header-button" asp-controller="Home" asp-action="PricesInfo">
-            Цены
-        </a>
-        <a class="header-button" asp-controller="Account" asp-action="Register">
+        <a class="header-button" asp-controller="Identification" asp-action="Registration">
             Регистрация
         </a>
-        <a class="header-button" asp-controller="Account" asp-action="Login">
+        <a class="header-button" asp-controller="Identification" asp-action="Authorization">
             Авторизация
         </a>
     </div>
@@ -35,8 +32,8 @@
                 <td class="table-cell">
                     <div class="role">Премиум</div>
                     <div class="functionality">
-                        - Просмотр погоды
-                        - Анализ участков
+                        - Добавление сущностей
+                        - Добавление доступов
                     </div>
                     <div class="price">10 BYN</div>
                 </td>

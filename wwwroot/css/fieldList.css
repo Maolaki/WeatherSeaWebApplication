@@ -1,8 +1,4 @@
-﻿.image-black-to-white {
-    filter: invert(1) hue-rotate(240deg);
-}
-
-.title {
+﻿.title {
     text-align: center;
     margin: 8vh 0; /* Адаптивный margin */
     font-size: min(6vw, 8vh, 56px); /* Адаптивный размер шрифта */
@@ -71,7 +67,7 @@ table {
     }
 
     .field .temperature {
-        font-size: calc(max(min(30vw * 2 / 40, 30vh * 2 / 40), 10px)); /* Адаптивный размер шрифта */
+        font-size: calc(max(min(30vw * 2 / 30, 30vh * 2 / 30), 10px)); /* Увеличенный адаптивный размер шрифта */
         position: absolute;
         left: 5%;
         top: 45%;
@@ -87,8 +83,9 @@ table {
     }
 
     .field img.small-image {
-        width: calc(max(min(30vw * 2 / 40, 30vh * 2 / 40), 10px)); /* Адаптивная ширина */
-        height: calc(max(min(30vw * 2 / 40, 30vh * 2 / 40), 10px)); /* Адаптивная высота */
+        width: calc(max(min(30vw * 2 / 30, 30vh * 2 / 30), 10px)); /* Увеличенная адаптивная ширина */
+        height: calc(max(min(30vw * 2 / 30, 30vh * 2 / 30), 10px)); /* Увеличенная адаптивная высота */
+        margin-right: 1vw; /* Смещение рисунка вправо */
     }
 
     .field .air-speed {
@@ -107,3 +104,21 @@ table {
     height: 2vh;
     cursor: pointer; /* Устанавливаем курсор указателя при наведении */
 }
+
+.invisible {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.no-fields-message {
+    text-align: center; /* Горизонтальное выравнивание */
+    vertical-align: middle; /* Вертикальное выравнивание */
+    font-size: 18px; /* Размер шрифта */
+}
+
+.no-fields-message {
+    text-align: center; /* Горизонтальное выравнивание */
+    vertical-align: middle; /* Вертикальное выравнивание */
+    font-size: 18px; /* Размер шрифта */
+}
+

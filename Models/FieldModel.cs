@@ -1,30 +1,39 @@
-﻿namespace WeatherSeaWebApplication.Models
+﻿using NpgsqlTypes;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace WeatherSeaWebApplication.Models
 {
     public enum FieldType
     {
-        Plant, // Только растения
-        Animal, // Только животные
-        Combined // Комбинированные
+        [PgName("plant")]
+        Plant = 0, // Только растения
+        [PgName("animal")]
+        Animal = 1, // Только животные
+        [PgName("combined")]
+        Combined = 2 // Комбинированные
     }
 
+    [Table("fieldlist")]
     public class FieldModel
     {
-        public int OwnerId { get; set; }
-        public string Name { get; set; }
+        [Column("id_field")]
+        [Key]
+        public int FieldId { get; set; }
+        [Column("login_owner")]
+        [ForeignKey("UserModel")]
+        public string OwnerLogin { get; set; } = "";
+        [Column("field_name")]
+        public string Name { get; set; } = "";
+        [Column("field_type", TypeName = "fieldtype")]
         public FieldType Type { get; set; }
-        public string Description { get; set; }
-        public double CoordX { get; set; }
-        public double CoordY { get; set; }
+        [Column("description")]
+        public string Description { get; set; } = "";
+        [Column("latitude")]
+        public double Latitude { get; set; }
+        [Column("longitude")]
+        public double Longitude { get; set; }
 
-        // Конструктор с параметрами
-        public FieldModel(int id, string name, FieldType type, string description, double coordX, double coordY)
-        {
-            OwnerId = id;
-            Name = name;
-            Type = type;
-            Description = description;
-            CoordX = coordX;
-            CoordY = coordY;
-        }
+        public FieldModel() { }
     }
 }

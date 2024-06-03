@@ -1,4 +1,4 @@
-﻿.AuthorizationBox {
+﻿.IdentificationBox {
     width: 300px;
     height: auto;
     padding: 20px;
@@ -12,7 +12,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.AuthorizationTitle {
+.IdentificationTitle {
     color: #0085FF;
     font-size: 30px; 
     text-align: center;
@@ -31,26 +31,26 @@
         box-sizing: border-box;
     }
 
-.LoginButtonContainer {
+.IdentificationButtonContainer {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
 
-.RegistrationPrompt {
+.IdentificationPrompt {
     margin-top: 15px;
     text-align: center;
 }
 
-    .RegistrationPrompt a {
+    .IdentificationPrompt a {
         color: #0085FF;
         text-decoration: none;
         font-weight: bold;
     }
 
 
-.AuthorizationButton {
+.IdentificationButton {
     padding: 10px 20px;
     margin: 0;
     border: 2px solid #0085FF;
@@ -63,7 +63,7 @@
     transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Плавная анимация */
 }
 
-    .AuthorizationButton:hover {
+    .IdentificationButton:hover {
         background-color: #0085FF;
         color: #FFFFFF;
         transform: scale(1.1);

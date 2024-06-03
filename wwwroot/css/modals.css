@@ -1,0 +1,124 @@
+﻿@font-face {
+    font-family: 'Exo2';
+    src: url('/fonts/Exo2-SemiBold.woff2');
+}
+
+.modal-backdrop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1040;
+    background-color: #000000a8;
+}
+
+#modal {
+    overflow-y: auto;
+    display: none;
+}
+
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+    margin: 0;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 15px;
+}
+
+.modal-title {
+    display: block;
+    margin: 2vh 2vh 0;
+    text-align: center; /* Центрировать текст заголовка */
+    font-size: 24px; /* Увеличить размер шрифта */
+}
+
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: 'Exo2', sans-serif; /* Применяем кастомный шрифт */
+}
+
+    .form-control:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+.modal-footer {
+    text-align: center;
+}
+
+.close {
+    position: relative;
+    top: calc(-1 * (1vh + 2.5vh)); /* Сдвиг вверх на половину высоты крестика (1vh) плюс 1.5vh для отступа */
+    left: 90%;
+    height: 2vh;
+    width: 2vh;
+    padding: 10px;
+    font-size: 2vh;
+    color: #FFFFFF; /* Белый текст */
+    background-color: #FF0000; /* Красный фон */
+    border-radius: 25%; /* Закругленные края */
+    display: flex; /* Использование flexbox */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+}
+
+
+.btn-primary {
+    background-color: #FFFFFF; /* Белый фон */
+    color: #000000; /* Черный текст */
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5%; /* Закругленные края */
+    margin: 0 0.8vh 2vh;
+}
+
+.modal-footer .btn-primary {
+    padding: 1vh 2vh; /* Увеличение внутренних отступов */
+    font-size: 2vh; /* Увеличение размера шрифта */
+    border-radius: 20px; /* Закругление углов */
+    color: #FFFFFF; /* Белый текст */
+}
+
+
+select.form-control {
+    appearance: none; /* Убираем стандартный стиль выпадающего списка */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='%23000000' d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E"); /* Добавляем кастомную иконку */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+    select.form-control::-ms-expand {
+        display: none;
+    }
+
+    select.form-control:disabled {
+        background-color: #f8f9fa; /* Цвет фона для неактивного состояния */
+        cursor: not-allowed; /* Запрещаем курсор при наведении */
+    }
+
+#Description {
+    resize: none; /* Запрещаем изменение размера поля */
+    height: 100px; /* Фиксируем высоту поля */
+    max-height: 200px; /* Опционально: устанавливаем максимальную высоту, чтобы предотвратить излишнее растягивание */
+}
+

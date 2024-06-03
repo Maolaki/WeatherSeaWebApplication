@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "FieldList";
+}
+
+@model List<FieldModel>
+
+@section Links {
+    <link rel="stylesheet" href="~/css/fieldList.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/modals.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/js/modals.js"></script>
+    <script src="~/js/fieldList.js"></script>
+}
+
+@section Navigation {
+    <a class="header-logo" asp-controller="Home" asp-action="Index">WeatherSea</a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Report" asp-action="ReportList">
+            Отчёты
+        </a>
+        <a class="header-button" asp-controller="Entity" asp-action="EntityList">
+            Сущности
+        </a>
+        <a class="header-button" asp-controller="Field" asp-action="FieldList">
+            Поля
+        </a>
+        <a class="header-button" asp-controller="Access" asp-action="AccessList">
+            Доступы
+        </a>
+    </div>
+    <a class="header-button-image" asp-controller="User" asp-action="Profile">
+        <img src="/icons/moon.png" alt="Картинка" class="button-image">
+    </a>
+}
+
+@section Body {
+    <div class="title">Мои поля</div>
+    <div class="table-container" id="MyTables">
+        <table>
+        </table>
+    </div>
+
+    <div class="title">Чужие поля</div>
+    <div class="table-container" id="AlienTables">
+        <table>
+        </table>
+    </div>
+}
+
+@section Modals {
+    <!-- Модальное окно для добавления поля -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="addFieldModalLabel" aria-hidden="true">
+        <div class="modal-backdrop">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h class="modal-title">Добавить поле</h>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <form>
+                            <div class="form-group">
+                                <label for="Name">Название поля:</label>
+                                <input type="text" class="form-control" id="Name" name="Name" placeholder="Название поля" required maxlength="16" minlength="4">
+                            </div>
+                            <div class="form-group">
+                                <label for="Description">Описание поля:</label>
+                                <textarea class="form-control" id="Description" name="Description" placeholder="Описание поля" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="Latitude">Широта:</label>
+                                <input type="number" step="0.00001" class="form-control" id="Latitude" name="Latitude" placeholder="Широта" required min="-90" max="90">
+                            </div>
+                            <div class="form-group">
+                                <label for="Longitude">Долгота:</label>
+                                <input type="number" step="0.00001" class="form-control" id="Longitude" name="Longitude" placeholder="Долгота" required min="-180" max="180">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Type">Тип поля:</label>
+                                <select class="form-control" id="Type" name="Type" required>
+                                    <option value="0">Только растения</option>
+                                    <option value="1">Только животные</option>
+                                    <option value="2">Комбинированные</option>
+                                </select>
+                            </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Добавить</button>
+                                </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

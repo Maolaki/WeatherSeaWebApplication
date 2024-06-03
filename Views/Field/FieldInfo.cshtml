@@ -1,0 +1,125 @@
+﻿@{
+    ViewData["Title"] = "FieldList";
+}
+
+@model List<FieldModel>
+
+@section Links {
+    <link rel="stylesheet" href="~/css/fieldTable.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/fieldInfo.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/js/fieldInfo.js"></script>
+}
+
+@section Navigation {
+    <a class="header-logo" asp-controller="Home" asp-action="Index">WeatherSea</a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Report" asp-action="ReportList">
+            Отчёты
+        </a>
+        <a class="header-button" asp-controller="Entity" asp-action="EntityList">
+            Сущности
+        </a>
+        <a class="header-button" asp-controller="Field" asp-action="FieldList">
+            Поля
+        </a>
+        <a class="header-button" asp-controller="Access" asp-action="AccessList">
+            Доступы
+        </a>
+    </div>
+    <a class="header-button-image" asp-controller="User" asp-action="Profile">
+        <img src="/icons/moon.png" alt="Картинка" class="button-image">
+    </a>
+}
+
+@section Body {
+    <div class="title">Информация по полю</div>
+
+    <div class="button-container">
+        <button id="showWeatherInfo" disabled>Погода</button>
+        <button id="showFieldInfo">О поле</button>
+    </div>
+
+    <div id="field-info" style="display: none;">
+        <div class="field-detail">
+            <span class="field-text-left">Название поля:</span>
+            <input class="field-text-right" id="fieldName" type="text" disabled />
+        </div>
+        <div class="field-detail">
+            <span class="field-text-left">Владелец поля:</span>
+            <span class="field-text-right" id="fieldOwner"></span>
+        </div>
+        <div class="field-detail">
+            <span class="field-text-left">Тип поля:</span>
+            <select class="field-text-right" id="fieldType" disabled>
+                <option value="0">Только растения</option>
+                <option value="1">Только животные</option>
+                <option value="2">Комбинированные</option>
+            </select>
+        </div>
+        <div class="field-detail">
+            <span class="field-text-left">Описание:</span>
+            <input class="field-text-right" id="fieldDescription" type="text" disabled />
+        </div>
+        <div class="field-detail">
+            <span class="field-text-left">Широта:</span>
+            <input class="field-text-right" id="fieldLatitude" type="text" disabled />
+        </div>
+        <div class="field-detail">
+            <span class="field-text-left">Долгота:</span>
+            <input class="field-text-right" id="fieldLongitude" type="text" disabled />
+        </div>
+        <button id="updateField" class="field-button-update" style="display: none;">Сохранить изменения</button>
+        <button id="editField" class="field-button-edit" style="display: none;">Редактировать поле</button>
+        <button id="deleteField" class="field-button-delete" style="display: none;">Удалить поле</button>
+    </div>
+
+
+    <!-- Тут прописывается информация о погоде -->
+    <div class="table-container">
+        <table>
+            <!-- Заполняется JS -->
+        </table>
+    </div>
+
+    <div class="side-table-container">
+        <div class="side-table">
+            <!-- Левая "таблица" -->
+            <a class="side-field-button disabled" id="1">
+                <span class="Вчера">@DateTime.Now.AddDays(1).ToString("dd.MM.yyyy")</span>
+            </a>
+            <a class="side-field-button" id="2">
+                <span class="Вчера">@DateTime.Now.AddDays(2).ToString("dd.MM.yyyy")</span>
+            </a>
+            <a class="side-field-button" id="3">
+                <span class="Вчера">@DateTime.Now.AddDays(3).ToString("dd.MM.yyyy")</span>
+            </a>
+            <a class="side-field-button" id="4">
+                <span class="Вчера">@DateTime.Now.AddDays(4).ToString("dd.MM.yyyy")</span>
+            </a>
+        </div>
+        <div class="side-table">
+            <!-- Правая "таблица" -->
+            <div class="side-field">
+                <span class="field-text-left">Средняя температура:</span>
+                <span class="field-text-right">24 °С</span>
+            </div>
+            <div class="side-field">
+                <span class="field-text-left">Средняя скорость ветра:</span>
+                <span class="field-text-right">2.4 м/с</span>
+            </div>
+            <div class="side-field">
+                <span class="field-text-left">ИКВ:</span>
+                <span class="field-text-right">53</span>
+            </div>
+            <div class="side-field">
+                <span class="field-text-left">Осадки:</span>
+                <span class="field-text-right">0.3 мм</span>
+            </div>
+        </div>
+    </div>
+}

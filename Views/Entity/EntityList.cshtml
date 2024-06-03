@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "EntityList";
+}
+
+@model List<EntityModel>
+
+@section Links {
+    <link rel="stylesheet" href="~/css/entityList.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/modals.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/js/modals.js"></script>
+    <script src="~/js/entityList.js"></script>
+}
+
+@section Navigation {
+    <a class="header-logo" asp-controller="Home" asp-action="Index">WeatherSea</a>
+    <div class="header-buttons">
+        <a class="header-button" asp-controller="Report" asp-action="ReportList">
+            Отчёты
+        </a>
+        <a class="header-button" asp-controller="Entity" asp-action="EntityList">
+            Сущности
+        </a>
+        <a class="header-button" asp-controller="Field" asp-action="FieldList">
+            Поля
+        </a>
+        <a class="header-button" asp-controller="Access" asp-action="AccessList">
+            Доступы
+        </a>
+    </div>
+    <a class="header-button-image" asp-controller="User" asp-action="Profile">
+        <img src="/icons/moon.png" alt="Картинка" class="button-image">
+    </a>
+}
+
+@section Body {
+    <div class="title">Сущности</div>
+    <div class="search-sort-filter-container">
+        <input type="text" id="search-input" placeholder="Поиск...">
+        <button id="sort-button">Сортировка</button>
+        <button id="filter-animals-button">Фильтр: Животные</button>
+        <button id="filter-plants-button">Фильтр: Растения</button>
+    </div>
+    <div class="table-container" id="Table">
+        <table>
+        </table>
+    </div>
+}
+
+@section Modals {
+    <!-- Модальное окно для добавления сущности -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="addEntityModalLabel" aria-hidden="true">
+        <div class="modal-backdrop">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h class="modal-title">Добавить Сущность</h>
+                    </div>
+                    <div class="modal-body">
+
+                        <form>
+                            <div class="form-group">
+                                <label for="Type">Тип сущности:</label>
+                                <select class="form-control" id="Type" name="Class" required>
+                                    <option value="Plant">Растение</option>
+                                    <option value="Animal">Животное</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Имя сущности:</label>
+                                <input type="text" class="form-control" id="Name" name="Name" placeholder="Имя сущности" required maxlength="16" minlength="3">
+                            </div>
+                            <div class="form-group">
+                                <label for="Description">Описание сущности:</label>
+                                <textarea class="form-control" id="Description" name="Description" placeholder="Описание сущности" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="RecommendedTemperature">Рекомендуемая температура:</label>
+                                <input type="number" step="0.01" class="form-control" id="RecommendedTemperature" name="RecommendedTemperature" placeholder="Температура" required min="-60" max="60">
+                            </div>
+                            <div class="form-group">
+                                <label for="RecommendedWindSpeed">Рекомендуемая скорость ветра:</label>
+                                <input type="number" step="0.01" class="form-control" id="RecommendedWindSpeed" name="RecommendedWindSpeed" placeholder="Скорость ветра" required min="-60" max="60">
+                            </div>
+                            <div class="form-group">
+                                <label for="RecommendedHumidity">Рекомендуемая влажность:</label>
+                                <input type="number" step="0.01" class="form-control" id="RecommendedHumidity" name="RecommendedHumidity" placeholder="Влажность" required min="-60" max="60">
+                            </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Добавить</button>
+                                </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

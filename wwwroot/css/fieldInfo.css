@@ -1,6 +1,6 @@
 ﻿.title {
     text-align: center;
-    margin: 20px 0;
+    margin: 8vh 0;
     font-size: 56px;
     font-weight: bold;
     color: #0085FF;
@@ -34,7 +34,7 @@ table {
         height: calc(60vw / 8 / 3);
         position: absolute;
         top: 5%;
-        left: 50%;
+        left: 40%;
         transform: translateX(-50%);
     }
 
@@ -146,6 +146,7 @@ table {
     border-image-slice: 1;
     justify-content: flex-start;
     justify-content: space-between;
+    justify-content: center;
 }
 
     .side-field-button.disabled {
@@ -181,4 +182,120 @@ table {
         color: white;
         margin: 0 10px; 
     }
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Кнопки будут выровнены по центру */
+    margin-top: 10px; /* Уменьшаем отступ сверху */
+    margin-bottom: 30px;
+}
+
+    .button-container button {
+        padding: 10px 20px; /* Внутренние отступы */
+        font-size: 16px; /* Размер шрифта */
+        border: 2px solid #007bff; /* Синяя граница */
+        background-color: #007bff; /* Синий фон */
+        color: #ffffff; /* Белый текст */
+        border-radius: 20px; /* Закругленные края */
+        cursor: pointer; /* Изменение курсора при наведении */
+        margin: 0 10px; /* Отступ между кнопками */
+    }
+
+        .button-container button:disabled {
+            opacity: 0.5; /* Сделать кнопку полупрозрачной в неактивном состоянии */
+            cursor: not-allowed; /* Изменение курсора на "not-allowed" в неактивном состоянии */
+        }
+
+        .button-container button:hover:not(:disabled) {
+            background-color: #0056b3; /* Изменение цвета фона при наведении */
+        }
+
+
+
+#field-info {
+    font-family: 'Exo2', sans-serif; /* Используем указанный шрифт */
+    display: none; /* По умолчанию блок скрыт */
+    margin: 0 auto; /* Центрируем по горизонтали */
+    max-width: 400px; /* Ограничиваем максимальную ширину */
+    text-align: center; /* Центрируем содержимое */
+}
+
+.field-detail {
+    margin-bottom: 20px; /* Увеличиваем отступ между деталями поля */
+    text-align: left; /* Выравниваем текст по левому краю */
+}
+
+.field-text-left {
+    display: block;
+    margin-bottom: 10px; /* Увеличиваем отступ снизу */
+    font-weight: bold; /* Жирный шрифт */
+}
+
+.field-text-right {
+    display: inline-block; /* Используем блочный элемент, чтобы текст начинался слева */
+    padding: 10px; /* Внутренние отступы */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Закругленные края */
+    box-sizing: border-box; /* Учитываем границу в расчетах ширины */
+    font-family: 'Exo2', sans-serif; /* Применяем кастомный шрифт */
+    width: calc(100% - 20px); /* Устанавливаем ширину, учитывая внутренние отступы */
+}
+
+select.field-text-right {
+    appearance: none; /* Убираем стандартный стиль выпадающего списка */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='%23000000' d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E"); /* Добавляем кастомную иконку */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    width: calc(100% - 20px); /* Устанавливаем ширину, учитывая внутренние отступы */
+}
+
+    select.field-text-right::-ms-expand {
+        display: none;
+    }
+
+    select.field-text-right:disabled {
+        background-color: #f8f9fa; /* Цвет фона для неактивного состояния */
+        cursor: not-allowed; /* Запрещаем курсор при наведении */
+    }
+
+.field-button-update,
+.field-button-edit {
+    display: none; /* Кнопка скрыта по умолчанию */
+    padding: 10px 30px; /* Внутренние отступы */
+    border: 2px solid #007bff; /* Синий цвет границы */
+    color: #FFFFFF; /* Белый фон */
+    background-color: #007bff; /* Синий текст */
+    border-radius: 20px; /* Закругленные углы */
+    font-family: 'Exo2', sans-serif; /* Шрифт */
+    cursor: pointer; /* Изменение курсора при наведении */
+    transition: background-color 0.3s, color 0.3s; /* Плавная анимация цвета при наведении */
+}
+
+.field-button-delete {
+    display: none; /* Кнопка скрыта по умолчанию */
+    padding: 10px 30px; /* Внутренние отступы */
+    border: 2px solid #FF0000; /* Синий цвет границы */
+    color: #FFFFFF; /* Белый фон */
+    background-color: #FF0000; /* Синий текст */
+    border-radius: 20px; /* Закругленные углы */
+    font-family: 'Exo2', sans-serif; /* Шрифт */
+    cursor: pointer; /* Изменение курсора при наведении */
+    transition: background-color 0.3s, color 0.3s; /* Плавная анимация цвета при наведении */
+}
+
+.field-button-update:hover {
+    color: #007bff; /* Синий фон при наведении */
+    background-color: #FFFFFF; /* Белый текст при наведении */
+}
+
+.field-button-edit:hover {
+    color: #007bff; /* Красный фон при наведении */
+    background-color: #FFFFFF; /* Белый текст при наведении */
+}
+
+.field-button-delete:hover {
+    color: #FF0000; /* Синий фон при наведении */
+    background-color: #FFFFFF; /* Белый текст при наведении */
+}
+
 

@@ -2,24 +2,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh; 
+    height: 100vh;
 }
 
 table {
     border-collapse: separate;
-    border-spacing: 2vh; 
-    margin: 0 auto;
+    border-spacing: 2vh;
+    margin-top: 10vh; /* Отступ сверху, чтобы таблица была ниже */
 }
 
 .table-cell {
     position: relative;
     text-align: center;
     vertical-align: middle;
-    border: 1vh solid #0085FF; 
-    border-radius: 25px; 
-    width: 24vh; 
-    height: 65vh; 
-    background: #ffffff; 
+    border: 1vh solid #0085FF;
+    border-radius: 25px;
+    width: 30vh;
+    height: 65vh;
+    background: #ffffff;
     padding: 2vh;
 }
 
@@ -50,6 +50,6 @@ table {
         color: black;
     }
 
-.table-cell:hover {
-    background-color: #e6f2ff;
-}
+    .table-cell:hover {
+        background-color: #e6f2ff;
+    }

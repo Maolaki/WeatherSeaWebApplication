@@ -1,0 +1,142 @@
+﻿.image-black-to-white {
+    filter: invert(1) hue-rotate(240deg);
+}
+
+.title {
+    text-align: center;
+    margin: 8vh 0; /* Адаптивный margin */
+    font-size: min(6vw, 8vh, 56px); /* Адаптивный размер шрифта */
+    font-weight: bold;
+    color: #0085FF;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh; /* Адаптивный margin */
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 2vw; /* Адаптивный отступ между ячейками */
+    width: 80%;
+}
+
+.field, .addField {
+    background: #ffffff;
+    border: 5px solid #0085FF;
+    padding: 0.5rem;
+    text-align: center;
+    width: calc(max(min(20vw * 2 / 40, 20vh * 2 / 40), 10px)); /* Адаптивная ширина */
+    height: calc(max(min(20vw * 2 / 5, 20vh * 2 / 5), 10px)); /* Адаптивная высота */
+    border-radius: 15px;
+    position: relative;
+    align-items: center;
+    cursor: pointer; /* Устанавливаем курсор указателя при наведении */
+}
+
+    .addField button {
+        background: #ffffff;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border: none;
+        cursor: pointer; /* Устанавливаем курсор указателя при наведении */
+    }
+
+    .field a, .addField a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: inherit;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .addField img {
+        width: calc(max(min(30vw * 2 / 10, 30vh * 2 / 10), 10px)); /* Адаптивная ширина */
+        height: calc(max(min(30vw * 2 / 10, 30vh * 2 / 10), 10px)); /* Адаптивная высота */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .field:hover, .addField:hover {
+        transform: scale(1.05);
+    }
+
+    .field .entity-name {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        font-size: calc(max(min(3vw, 3vh), 10px)); /* Адаптивный размер шрифта */
+    }
+
+    .field .class {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: calc(max(min(3vw, 3vh), 10px)); /* Адаптивный размер шрифта */
+    }
+
+
+.delete-button {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.delete-icon {
+    width: 3vh; /* Устанавливаем ширину и высоту, чтобы сделать иконку маленькой */
+    height: 3vh;
+    cursor: pointer; /* Устанавливаем курсор указателя при наведении */
+}
+
+    .delete-icon:hover {
+        transform: scale(1.3);
+    }
+
+.no-fields-message {
+    text-align: center; /* Горизонтальное выравнивание */
+    vertical-align: middle; /* Вертикальное выравнивание */
+    font-size: 5vh; /* Размер шрифта */
+}
+
+body {
+    font-family: 'Exo2', sans-serif; /* Применение шрифта к телу документа */
+}
+
+.search-sort-filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-color: #007bff;
+}
+
+#search-input {
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Exo2', sans-serif; /* Применение шрифта к полю ввода */
+    border-color: #007bff;
+}
+
+#sort-button, #filter-animals-button, #filter-plants-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Exo2', sans-serif; /* Применение шрифта к кнопкам */
+    cursor: pointer;
+    border: 1px solid #333;
+    background-color: white;
+    transition: background-color 0.3s, color 0.3s;
+    border-color: #007bff;
+}
+
+    #sort-button:hover, #filter-animals-button:hover, #filter-plants-button:hover {
+        background-color: #007bff;
+        color: white;
+    }
