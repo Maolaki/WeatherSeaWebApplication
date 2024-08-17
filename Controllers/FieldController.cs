@@ -83,7 +83,7 @@ namespace WeatherSeaWebApplication.Controllers
             var accessibleFieldIds = accessList.Select(a => a.FieldId).Distinct().ToList();
             var accessibleFields = _context.FieldList.Where(f => accessibleFieldIds.Contains(f.FieldId)).ToList();
 
-            var apiKey = "d70ee2c7097a6708357e647b25b32615";
+            var apiKey = ""; // InsertYourAPIKeyHere
             var httpClient = new HttpClient();
 
             async Task<object> GetFieldWithWeather(FieldModel field)
